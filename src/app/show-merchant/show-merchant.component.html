@@ -1,0 +1,36 @@
+<app-navbar (valueChange)='getsearch($event)' [data]='cartlength' [merchantid]='merid'></app-navbar>
+
+
+    <div class="container">
+
+<div *ngIf="flag">
+    <div *ngFor="let merchant of merchants let i = index">
+        <div  (click)="productsmerchant(i)">
+
+        <mat-card class="my-4" >
+           
+                <mat-card-content>
+                    <div class="name">
+                        {{merchant.shopname}}
+                    </div>
+                    <div class="logo">
+                        <img src="assets/img/user2.png"/>
+                    </div>
+                </mat-card-content>
+            
+
+        </mat-card>
+
+    </div>
+    </div>
+
+</div>
+<div *ngIf="!flag">
+<h1>Loading</h1>
+</div>
+</div>
+
+ 
+
+
+

@@ -1,0 +1,66 @@
+<div class="container" *ngIf="!flag">
+  <div *ngFor="let cart_product of cart_products let i = index" >
+    <mat-card class="my-4 " >
+      <div class="mat row">
+      <div class="top-body" >
+      <h1 style="font-family: 'Squada One';    color: rgb(30, 210, 255);
+      ">{{cart_product.product.name}}</h1>
+
+      <h2 style="color: blueviolet;"> <mdb-badge success="true">Quantity</mdb-badge><mdb-badge danger="true" style="margin-left:20px!important;">{{cart_product.quantity}}</mdb-badge>
+        </h2>
+       <h2 ><mdb-badge style="color: black!important;" pill="true" warning="true">Rs.{{cart_product.product.price*cart_product.quantity}}</mdb-badge>
+        </h2>
+      </div>
+      <div class="bot-body">
+        <img src={{cart_product.product.imageUrl}}>
+        <!-- <img src="https://cf.ltkcdn.net/feng-shui/images/std/238173-699x450-taj-mahal.jpg"> -->
+      </div>
+      </div>
+
+    <div class="row" style="align-items: center;display: flex;justify-content: space-evenly;">
+      <mat-card-actions style="display: flex;align-items: center;justify-content: center;">
+      
+        <button  (click)="cartincrement(i)"   mat-raised-button color="accent" class="fab">+</button>
+        <h2  style="padding-top: 1vw;margin-left: 1vw;margin-right: 1vw;">{{cart_product.quantity}}</h2>
+        <button  (click)="cartdecrement(i)"   mat-raised-button color="accent" class="fab">-</button>
+     <button (click)="removeitem(i)"   mat-raised-button color="primary" class="fab">Remove from cart</button>
+      </mat-card-actions>
+    </div>
+    </mat-card>
+
+  </div>
+
+  <mat-card class="my-4">
+    <div class="mat row">
+      <mat-card-content>
+        <h2 style="color: black;">  <mdb-badge style="color: black!important;" warning="true">Item total </mdb-badge><mdb-badge style="color: black!important;margin-left: 3vw;" pill="true" primary="true">Rs. {{total}}</mdb-badge>
+
+          </h2>
+      </mat-card-content>
+    </div>
+    <div class="row" style="align-items: center;display: flex;justify-content: space-evenly;">
+
+    <mat-card-actions style="display: flex;align-items: center;justify-content: center;">
+      <button  (click)="checkout()" style="background-color: cyan;color: black;"  mat-raised-button color="primary" class="fab">Proceed To checkout</button>
+      <button  (click)="clearcart()" style="background-color: lawngreen;color: black; "  mat-raised-button color="primary" class="fab">clear the cart</button>
+
+    </mat-card-actions>
+    </div>
+  </mat-card>
+
+</div>
+<div class="container my-4 empty-cart" *ngIf="flag" >
+  <mat-card class="empty-cart" >
+    <mat-card-content style="font-family: 'Permanent Marker', cursive ; font-size: 3vw;" >
+      Your cart is empty
+
+      <mat-card-actions class="my-4 mx-4" >
+  
+        <button style="color: black!important;" (click)="callmerchant()"  mat-raised-button color="accent" class="fab2">Continue shopping</button>
+      
+        </mat-card-actions>
+    </mat-card-content>
+ 
+  </mat-card>
+
+</div>

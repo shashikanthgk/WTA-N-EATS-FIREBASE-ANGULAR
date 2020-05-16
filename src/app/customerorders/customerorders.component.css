@@ -1,0 +1,17 @@
+.mat-card-content{
+    display: flex;
+    justify-content: space-between;
+    font-size: 2vw;
+    font-family: 'Lobster', cursive;
+    color: tomato;
+    
+
+} 
+
+a{
+    text-decoration: none;
+    color: black;
+}
+.name{
+    padding-top: 10px;padding-right: 5px;
+}

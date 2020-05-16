@@ -1,0 +1,51 @@
+
+<div class=" prg container" *ngIf="products.length==0">
+<h1>Loading....</h1>
+  </div>
+  
+
+
+  <div class="container" *ngIf="products.length!=0">
+    <div style="display: flex; justify-content: space-evenly;" class="my-4">
+      <h1 style="color: #e41b56;font-family: 'Merienda One'!important;"><span class="badge badge-default">Order Details </span></h1>
+      <h1><span class="badge badge-pill badge-secondary">ID: {{orderid}}</span>
+      </h1>
+    </div>
+   
+
+    <mat-card class="my-4 " >
+
+    <div *ngFor="let product of products let i = index" >
+ 
+        <div class="mat row text" style="margin-bottom: 4vh;padding-top: 4vh;">
+        <div class="top-body" >
+        <h1 style="font-family: 'Squada One';    color: rgb(30, 210, 255);
+        ">{{product.name}}</h1>
+        <h2 style="color: blueviolet;"> <mdb-badge success="true">Quantity</mdb-badge><mdb-badge danger="true" style="margin-left:20px!important;">{{product.quantity}}</mdb-badge>
+          </h2>
+         <h2 ><mdb-badge style="color: black!important;" pill="true" warning="true">Rs.{{product.price*product.quantity}}</mdb-badge>
+          </h2>
+        </div>
+        <div class="bot-body">
+          <img src={{product.imageUrl}}>
+          <!-- <img src="https://cf.ltkcdn.net/feng-shui/images/std/238173-699x450-taj-mahal.jpg"> -->
+        </div>
+        </div>
+  
+      <mat-divider></mat-divider>
+
+    </div>
+
+
+    <div class="row head text" style="padding-top: 4vh;" >
+      <mat-card-actions style="display: flex;align-items: center;justify-content: center;">
+      <button (click)="confirmorder()"   mat-raised-button color="primary" class="fab" *ngIf="!isapproved">Confirm</button>
+      <button    mat-raised-button color="primary" class="fab" *ngIf="isapproved" [disabled]="true">Confirmed</button>
+      <button (click)="paymentdetails(i)"   mat-raised-button color="accent" class="fab">Payment Details</button>
+      <button (click)="adressdetail(i)"   mat-raised-button style="background-color: #9214eb;" class="fab">Address Details</button>
+       </mat-card-actions>
+     </div>
+    </mat-card>
+
+
+  </div>

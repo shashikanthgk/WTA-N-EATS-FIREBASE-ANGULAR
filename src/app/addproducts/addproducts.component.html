@@ -1,0 +1,45 @@
+<div class="container">
+    <div *ngIf="!isLoaded">
+        <div *ngIf="ismerchant">
+            <form #userRegForm="ngForm" (ngSubmit)="addproducts(userRegForm)">
+                <div class="row">
+                    <div class="col-md-6 mb-2">
+                        <label for="name">product name</label>
+                        <input ngModel #firstname="ngModel" name="name" type="text" class="form-control" id="name" ng-required="true" ng-minlength="10" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 mb-2">
+                        <label for="price">Price</label>
+                        <input ngModel #email="ngModel" name="price" type="number" class="form-control" ng-required="true" />
+                    </div>
+                </div>
+                <div>
+                    <div class="row">
+                        <div class="col-md-12 mb-2">
+                            <label for="description">Description</label>
+                            <input ngModel #password="ngModel" name="description" type="text" class="form-control" ng-required="true" />
+                        </div>
+                    </div>
+                    <label for="file">File:</label>
+                    <input type="file" (change)="upload($event)" accept=".png,.jpg" name="image" />
+                    <progress max="100" [value]="uploadProgress | async"></progress>
+                    <div class="result" *ngIf="uploadURL | async; let uploadSrc">
+                        <a [href]="uploadSrc">You just uploaded this file!</a>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button class="btn btn-primary" type="submit">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div *ngIf="!ismerchant">
+            <h1>
+                You are not merchant create merchant account to add product
+            </h1>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<mat-dialog-content>
+
+ <mat-radio-group
+  aria-labelledby="example-radio-group-label"
+  class="example-radio-group"
+  [(ngModel)]="selected">
+  <mat-radio-button class="example-radio-button" *ngFor="let boy of dboysname" [value]="boy">
+    {{boy.name}}
+  </mat-radio-button>
+ </mat-radio-group>
+</mat-dialog-content>
+
+ <mat-dialog-actions style="display:flex;justify-content: space-evenly;">
+    <button mat-raised-button style="background-color: chartreuse;" (click)="save()" >Continue</button>
+    <button mat-raised-button style="background-color: orangered;" (click)="close()" >Cancel</button>
+
+</mat-dialog-actions>

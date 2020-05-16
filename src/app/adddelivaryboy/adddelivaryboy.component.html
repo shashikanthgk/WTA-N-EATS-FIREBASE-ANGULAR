@@ -1,0 +1,27 @@
+<h2 mat-dialog-title>{{description}}</h2>
+
+<mat-dialog-content [formGroup]="form" style="display: flex;flex-direction: column;">
+
+
+
+ 
+  <mat-form-field >
+              <input matInput
+                placeholder="name"
+               formControlName="name" type="text" ng-required="true" (input)="oninvalidname($event.target.value)">
+    </mat-form-field>
+    <p *ngIf="invalidname" style="color: red;">Invalid name</p>
+
+    <mat-form-field>
+        <input matInput
+                placeholder="Phone number"
+               formControlName="phone" type="tel" ng-required="true" ng-minlength=10 (input)="oninvalidphone($event.target.value)">
+    </mat-form-field>
+    <p *ngIf="invalidphone" style="color: red;">Invalid phone number format</p>
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button class="mat-raised-button"(click)="close()">Close</button>
+    <button class="mat-raised-button mat-primary"(click)="save()">Save</button>
+</mat-dialog-actions>

@@ -1,0 +1,30 @@
+
+<app-navbar  [merchantid]='merid'></app-navbar>
+<h4 class="mt-4">Home Page</h4>
+<span *ngIf="user">
+  <p *ngIf="ismechant">
+    Logged in as a merchant: {{ user?.email }} - {{ user?.displayName }}
+    {{ userdata?.email }}
+  </p>
+  <p *ngIf="!ismechant">
+    Logged in as a user: {{ user?.email }} - {{ user?.displayName }}
+    {{ userdata?.email }}
+  </p>
+</span>
+
+<button class="btn btn-primary mr-2" *ngIf="!user" (click)="register()">
+  Register
+</button>
+<button class="btn btn-primary mr-2" *ngIf="!user" (click)="registermerchant()">
+  MerchantRegister
+</button>
+
+<button class="btn btn-primary" *ngIf="user" (click)="logout()">
+  Logout
+</button>
+<button class="btn btn-primary" *ngIf="!user" (click)="login()">Login</button>
+
+<div style="display: flex; justify-content: space-evenly;" class="my-4" *ngIf="ismechant">
+  <button (click)="adddelivaryboys()"  mat-raised-button color="accent" style="margin-top: 6px;">Adddelivaryboy</button>
+
+</div>

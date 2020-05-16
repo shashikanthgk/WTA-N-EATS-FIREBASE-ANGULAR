@@ -1,0 +1,30 @@
+
+
+<div *ngIf="!flag">
+<div class="conatiner" *ngFor="let message of messages let i = index" >
+<mat-card style="margin:2em;padding-top:0;padding-left:0;padding-right:0;float: right;" class="example-card">
+<mat-card-title style="background:rgba(0, 0, 0, 0.06); padding:20px 20px;"><span style="color: #e41b56;font-family: 'Merienda One'!important;">from :</span><span style="font-family: 'Bree Serif', serif;
+  "> {{message.from}}</span>          
+   </mat-card-title>
+    <mat-card-content style="padding:1em;">
+      <p>{{message.message}}</p>
+    </mat-card-content>
+    <mat-card-actions style="display: flex;justify-content: center;">
+      <button  (click)="deletemsg(i)" style="margin: 1vw;" mat-raised-button color="warn" >Delete</button>
+    <button (click)="sendmsg(i)" style="margin: 1vw;" mat-raised-button color="accent">Contact Us</button>
+    </mat-card-actions>
+  </mat-card>
+
+</div>
+
+<div class="container" *ngIf="messages.length==0" >
+<mat-card class="my-4">
+  <mat-card-content style="color: #e41b56;font-family: 'Merienda One'!important;">
+    Your mail box is empty 🤔🤔🤔🤔🤔🤔🤔
+  </mat-card-content>
+</mat-card>
+</div>
+</div>
+<div *ngIf="flag" style="font-size: 800px!important; display: flex;justify-content: center;align-items: center;">
+<h2>🤖🤖🤖🤖🤖🤖</h2>
+</div>

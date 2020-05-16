@@ -1,0 +1,30 @@
+<h2 mat-dialog-title>{{description}}</h2>
+
+<mat-dialog-content [formGroup]="form" style="display: flex;flex-direction: column;">
+
+
+
+ 
+  <mat-form-field>
+              <input matInput
+                placeholder="Product name"
+               formControlName="name" type="text">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput
+                placeholder="product price"
+               formControlName="price" type="number">
+    </mat-form-field>
+ 
+    <mat-form-field>
+        <textarea matInput
+                placeholder="product description"
+               formControlName="description" type="text" rows="6"></textarea>
+    </mat-form-field>
+ 
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button class="mat-raised-button"(click)="close()">Close</button>
+    <button class="mat-raised-button mat-primary"(click)="save()">Save</button>
+</mat-dialog-actions>

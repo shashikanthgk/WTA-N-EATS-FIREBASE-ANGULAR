@@ -1,0 +1,76 @@
+
+
+<div class="container">
+  <div *ngFor="let product of products let i = index" >
+    <mat-card class="my-4 " >
+      <div class="mat row">
+      <div class="top-body">
+      <h1 style="font-family: 'Squada One';   color: #eb1497;
+      ">product name :{{ product?.name }}</h1>
+
+      <h2 style="color: blueviolet;"> <mdb-badge warning="true" >product price :</mdb-badge>
+        
+       <mdb-badge success="true" style="margin-left: 10px;"> RS. {{ product?.price }}</mdb-badge>
+        </h2>
+
+            <h2 style="color: purple;"><mdb-badge primary="true" >product description : </mdb-badge> {{ product?.description }}</h2>
+
+      </div>
+      <div class="bot-body">
+        <img src={{product.imageUrl}}>
+        <!-- <img src="https://cf.ltkcdn.net/feng-shui/images/std/238173-699x450-taj-mahal.jpg"> -->
+      </div>
+      </div>
+
+    <div class="row" style="align-items: center;display: flex;justify-content: space-evenly;">
+      <mat-card-actions style="display: flex;align-items: center;justify-content: center;">
+      
+     <button (click)="openAlertwindow(i)"   mat-raised-button color="warn" class="fab">Delete Item</button>
+     <button (click)="openDialog(i)"   mat-raised-button color="primary" class="fab">Update Item</button>
+
+      </mat-card-actions>
+    </div>
+    </mat-card>
+
+  </div>
+
+  <!-- <div>
+    <ol>
+      <li>
+        <mat-form-field>
+          <input matInput [(ngModel)]="name" placeholder="What's your name?">
+        </mat-form-field>
+      </li>
+      <li>
+        <button mat-raised-button (click)="openDialog()">Pick one</button>
+      </li>
+      <br />
+      <li *ngIf="animal">
+        You chose: <p style="font-weight: bold">{{animal}}</p>
+      </li>
+    </ol> -->
+  <!-- </div> -->
+
+<!-- <div class="container">
+    <ul *ngFor="let product of products let i = index" class="list-group">
+
+        <div class="row">
+            <div class="col-8">
+                <li class="list-group-item">product name :{{ product?.name }}</li>
+                <li class="list-group-item">product price :{{ product?.price }}</li>
+                <li class="list-group-item">
+                    product description : {{ product?.description }}
+                </li>
+                <li class="list-group-item btn-con">
+                    <button (click)="Delete(i)" class="btn btn-primary">Delete</button>
+                </li>
+
+            </div>
+            <span class="col-4 img" style="display:table-cell; vertical-align:middle; text-align:center">
+                <img src={{product.imageUrl}} width="100%" height="100%" />
+            </span>
+        </div>
+    </ul>
+</div> -->
+
+</div>

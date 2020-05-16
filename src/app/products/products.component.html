@@ -1,0 +1,69 @@
+
+<app-navbar (valueChange)='getsearch($event)' [data]='cartlength' [merchantid]='merid'></app-navbar>
+
+
+<div class=" prg" *ngIf="progress">
+  <mat-progress-spinner
+  class="example-margin"
+  [color]="color"
+  [mode]="mode"
+  [value]="value">
+</mat-progress-spinner>
+</div>
+
+<div class="div container" *ngIf="products">
+<div class="flex flex-wrap -m-3"> 
+  <div *ngFor="let product of products;let cartb of cartbutton let i = index">
+  <mat-card class="my-4" >
+  <div class="w-full sm:w-1/2 md:w-1/3 flex flex-col p-3" style="margin: 0;padding: 0;">
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden  row ">
+      <div class=" col-8 text my-4" >
+        <h3 class=" item-head" style="  font-family: 'Permanent Marker', cursive !important;
+      color: rgb(0, 162, 255);">{{product.name}}</h3>
+        <div class="mb-4 text-grey-darker item-desc text my-4">
+          <p> {{product.description}}</p>
+        </div>
+        <div class="mb-4 text-grey-darker text-sm flex-1 price">
+          <mdb-badge style="color: black!important;" pill="true" warning="true">RS. {{product.price}}</mdb-badge>
+
+          
+        </div>
+      </div>
+      <div class="col-4">
+        <img src={{product.imageUrl}}/>
+        <!-- <img src="https://cf.ltkcdn.net/feng-shui/images/std/238173-699x450-taj-mahal.jpg"> -->
+      </div>
+    </div>  
+  </div>
+  
+  <mat-card-actions style="display: flex;align-items: center;justify-content: center;">
+    <!-- <button *ngIf="cartbutton[i]" (click)="cartincrement(i)" style="margin: 10px;" mat-raised-button color="primary" >+</button> -->
+    <button *ngIf="cartbutton[i]" (click)="cartincrement(i)" mat-mini-fab color="primary" mat-raised-button color="primary" class="fab">+</button>
+    <h2 *ngIf="cartbutton[i]" style="padding-top: 1.5vh;margin-left: 1vw;margin-right: 1vw;">{{itemquantity[i]}}</h2>
+
+    <button *ngIf="cartbutton[i]" (click)="cartdecrement(i)" mat-mini-fab color="primary" mat-raised-button color="primary" class="fab">-</button>
+
+    <!-- <button *ngIf="cartbutton[i]" (click)="cartdecrement(i)" style="margin: 10px;" mat-raised-button color="primary" >-</button> -->
+    <button *ngIf="!cartbutton[i]" (click)="[addtocart(i),openSnackBar(i)]" style="margin: 1vw;" mat-raised-button color="primary" >Add To cart</button>
+    <button (click)="buynow(i)" style="margin: 1vw;" mat-raised-button color="accent">Buy Now</button>
+    </mat-card-actions>
+</mat-card>
+
+  
+
+</div>
+</div> 
+</div>
+
+<div class="container my-4 empty-cart" *ngIf="productflag" >
+  <mat-card class="empty-cart" >
+    <mat-card-content style="font-family: 'Permanent Marker', cursive ; font-size: 3vw;" >
+      This merchant has no products right now
+      <mat-card-actions class="my-4 mx-4" >
+        <button style="color: black!important;" (click)="callmerchant()"  mat-raised-button color="accent" class="fab2">Continue shopping</button>
+        </mat-card-actions>
+    </mat-card-content>
+ 
+  </mat-card>
+
+</div>

@@ -1,0 +1,29 @@
+.cart{
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border: none;
+    border-radius: 2px;
+    background-color: rgb(59, 255, 20);
+}
+.cart:focus{
+    outline: none;
+}
+.cart:hover{
+    transform: translateY(-4px);
+    transition: all 0.4s linear;
+}
+.cart:active{
+    transition: all 0.4s linear; 
+    transform: translateY(4px);
+}
+.cursor:hover{
+    cursor: pointer;
+}
+li{
+    cursor: pointer;
+}
+a{
+    cursor: pointer;
+}

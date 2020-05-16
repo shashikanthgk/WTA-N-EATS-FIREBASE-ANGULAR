@@ -1,0 +1,22 @@
+<mat-dialog-content>
+  
+    <mat-list>
+        <mat-list-item class="text">Payment ID<span class="space"> </span><span class="badge badge-pill badge-secondary" style="color: black;font-family: Georgia, 'Times New Roman', Times, serif;">{{payment.paymentid}}</span></mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item class="text">Payment date<span class="space"> </span><span class="badge badge-pill badge-secondary">{{payment.time | date}}</span></mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item class="text">Status<span class="space"> </span><span class="badge badge-pill badge-danger">{{payment.status}}</span></mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item class="text">Amount<span class="space"> </span><span class="badge badge-pill badge-primary">RS. {{payment.amount}}</span></mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item class="text">User Email<span class="space"> </span><span class="badge badge-pill badge-warning">{{payment.useremail}}</span></mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item class="text">User Name<span class="space"> </span><span class="badge badge-pill badge-default">{{payment.username}} {{payment.lastname}}</span></mat-list-item>
+      </mat-list>
+     
+    </mat-dialog-content>
+    
+    <mat-dialog-actions style="display:flex;justify-content: space-evenly;">
+        <button mat-raised-button style="background-color: chartreuse;" (click)="close()" >OK</button>
+
+</mat-dialog-actions>

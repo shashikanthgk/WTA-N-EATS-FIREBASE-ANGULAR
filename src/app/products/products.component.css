@@ -1,0 +1,61 @@
+/* demo shizzle only */
+body {
+    background: #eee;
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+  /*   outline: 1px solid #ccc; */
+  }
+  
+  /* Still use global css (not utility css) for base typography etc? */
+  p {
+    margin-bottom: 0.8em;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    max-height: 100vh;
+    padding: 10px;
+    margin: 10px;
+    }
+.item-head{
+  font-family: 'Permanent Marker', cursive !important;
+  font-size: 3vw;
+color: rgb(0, 162, 255);
+}
+.item-desc{
+  font-family: 'ZCOOL QingKe HuangYou', cursive;
+ font-size: 2.2vw; 
+color: black;
+}
+.price{
+  font-size: 2.5vw;
+  color: blueviolet;
+}
+
+.empty-cart{
+
+  font-size: 3vw;
+  color:red
+      }
+button {
+  min-height: 40px !important;
+  min-width: 3vw !important;
+  /* font-size: 2vw !important; */
+  line-height: 0px; 
+}
+.fab:focus{
+outline: none;
+}
+.text{
+  text-align: justify; /* For Edge */
+  -moz-text-align-last: center; /* For Firefox prior 58.0 */
+  text-align-last: center;
+}
+.prg {
+  position: absolute;
+  z-index: 15;
+  top: 50%;
+  left: 50%;
+  margin: -100px 0 0 -150px;
+}

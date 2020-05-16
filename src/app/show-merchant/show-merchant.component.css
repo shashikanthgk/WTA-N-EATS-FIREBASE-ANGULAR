@@ -1,0 +1,22 @@
+ .mat-card-content{
+    display: flex;
+    justify-content: space-between;
+    font-size: 2rem;
+    font-family: 'Lobster', cursive;
+    
+
+} 
+.mat-card-content:hover{
+    transform: translate3d(1,2,3);
+}
+.name{
+    float:right;
+}
+.img{
+    float: left;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+

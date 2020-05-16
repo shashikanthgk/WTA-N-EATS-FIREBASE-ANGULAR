@@ -1,0 +1,11 @@
+<mat-dialog-content>
+  
+<h1>{{message1}}<span style="color: #e41b56;font-family: 'Merienda One'!important;">{{name}}</span>{{message2}}</h1>
+      
+ 
+</mat-dialog-content>
+
+<mat-dialog-actions style="display:flex;justify-content: space-evenly;">
+    <button mat-raised-button color="accent" (click)="close()" >Cancel</button>
+    <button mat-raised-button color="warn"  (click)="save()" >Delete</button>
+</mat-dialog-actions>

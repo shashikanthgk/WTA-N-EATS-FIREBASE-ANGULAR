@@ -1,0 +1,54 @@
+.mat{
+    width: 100%;
+    display:flex;
+    justify-content: space-around;
+    height: 50%;
+}
+.top-body{
+    width:70%;
+    padding: 0;
+    margin:0;
+    font-family: 'Squada One', ;
+    font-size: 3vw;
+   
+}
+.bot-body{
+    display: flex;
+    justify-content: space-around;
+    float:right;
+    padding-right: 0;
+    margin-right: 0;
+    align-content: stretch;
+}
+button {
+    min-height: 30px !important;
+    min-width: 3vw !important;
+    /* font-size: 2vw !important; */
+    line-height: 0px; 
+  }
+  .fab:focus{
+  outline: none;
+  }
+
+
+
+.fab2{
+background-color: yellow;
+}
+.fab2:focus{
+    outline: none;
+    }
+  
+img {
+    align-self: end;
+    max-width: 100%;
+    height: auto;
+    max-height: 10vw;
+    padding: 0px;
+    margin: 0px;
+    }
+.empty-cart{
+
+font-size: 3vw;
+color:red
+    }

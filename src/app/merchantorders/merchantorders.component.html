@@ -1,0 +1,49 @@
+
+<div class="container">
+
+    <div *ngIf="orderflag">
+    <mat-form-field style="width: 100%;">
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter" style="width: 90%;">
+      </mat-form-field>
+
+        <div *ngFor="let order of orders; let i = index">
+            <div >
+            <mat-card class="my-4" >
+                    <mat-card-content>
+                        <div class="name" style="color: crimson;">
+                            <span >
+                                {{order.firstname}}
+                            </span>
+                            <span>
+                                {{order.lastname}}
+                            </span>
+                            
+                        </div>
+                        <div class="name" >
+                          <span>ID:</span><span style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;color: blue;
+                          ">{{order.ordersid}}</span>  
+                        </div>
+                        <div>
+                            <button (click)="gotodetails(i)"  mat-raised-button color="primary" style="margin-top: 6px;">Details</button>
+    
+                            </div>
+                        <div class="logo">
+                            <img src="assets/img/user2.png"/>
+                        </div>
+                     
+                    </mat-card-content>
+                
+    
+            </mat-card>
+    
+        </div>
+ 
+    
+    </div>
+</div>
+
+<div *ngIf="!orderflag">
+<h1>Loading..........</h1>
+</div>
+</div>
+    
