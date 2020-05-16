@@ -5,14 +5,8 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyANoCwI8BuLyqS-AW3BqGQmpSjaAIHFsMk",
-    authDomain: "fir-authentication-3fba3.firebaseapp.com",
-    databaseURL: "https://fir-authentication-3fba3.firebaseio.com",
-    projectId: "fir-authentication-3fba3",
-    storageBucket: "fir-authentication-3fba3.appspot.com",
-    messagingSenderId: "137801154719",
-    appId: "1:137801154719:web:898a36e397284823d562aa",
-    measurementId: "G-2F1G05YJCM"
+   //put your firebase information here like app key and other information related to firebase project
+    //the whole json object you got while creating the project in firebase
   }
 };
 
